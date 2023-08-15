@@ -13,6 +13,7 @@ function GoogleSignIn() {
     const [clicked, setClicked] = useState(false)
     const handleResolve = (resp) => {
         setClicked(true);
+        console.log(resp.data)
         const userData = {
             email: resp.data.email,
             full_name: resp.data.name,

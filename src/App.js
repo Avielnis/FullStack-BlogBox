@@ -14,6 +14,7 @@ import {loginWithSession, userInfo} from "./components/Login";
 import EditPost from "./components/EditPost";
 import ForgotPass from "./components/ForgotPass";
 import ChangePassword from "./components/ChangePassword";
+import Footer from "./components/Footer";
 
 function App() {
     loginWithSession()
@@ -38,6 +39,9 @@ function App() {
                     <Route path={'/forgotPass'} Component={ForgotPass}></Route>
                     <Route path={'/EditPassword'} Component={ChangePassword}></Route>
                 </Routes>
+            </div>
+            <div>
+                <Footer />
             </div>
         </div>
 

@@ -9,15 +9,15 @@ import confiramtion_email
 import json
 
 ## for deployment
-# pool = mysql.pooling.MySQLConnectionPool(
-#     host="aviel-nisanov-blog-db.cbrdyb6rueag.eu-central-1.rds.amazonaws.com",
-#     user="admin",
-#     passwd=dbpass,
-#     database="blog",
-#     buffered=True,
-#     pool_size=5,
-#     pool_name="blog_aviel"
-# )
+pool = mysql.pooling.MySQLConnectionPool(
+    host="aviel-nisanov-blog-db.cbrdyb6rueag.eu-central-1.rds.amazonaws.com",
+    user="admin",
+    passwd=dbpass,
+    database="blog",
+    buffered=True,
+    pool_size=5,
+    pool_name="blog_aviel"
+)
 
 # app = Flask(__name__,
 #             static_folder=r'C:\Users\Aviel\IDC\Full-stack\Week 9\hw8-FullStack\build',
@@ -46,15 +46,15 @@ import json
 
 
 #### for local use
-pool = mysql.pooling.MySQLConnectionPool(
-    host="localhost",
-    user="root",
-    passwd=dbpass,
-    database="blog",
-    buffered=True,
-    pool_size=5,
-    pool_name="blog_aviel"
-)
+# pool = mysql.pooling.MySQLConnectionPool(
+#     host="localhost",
+#     user="root",
+#     passwd=dbpass,
+#     database="blog",
+#     buffered=True,
+#     pool_size=5,
+#     pool_name="blog_aviel"
+# )
 app = Flask(__name__)
 
 INDEX_OF_CREATED_AT = 4

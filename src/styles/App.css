@@ -40,11 +40,10 @@
     transform: scale(1.1); /* slightly scale up the link on hover */
     background-color: #ff4646; /* slightly lighter red color on hover */
 }
-
-#main {
-    float: left;
-    width:100%; /* Adjust this value as needed */
-}
+/*#main {*/
+/*    float: left;*/
+/*    width:100%; !* Adjust this value as needed *!*/
+/*}*/
 
 #slideBar {
     float: left;
