@@ -1,0 +1,165 @@
+#MenuBar {
+    display: flex;
+    justify-content: flex-start; /* align links to the left */
+    align-items: center;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#MenuBar a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px; /* space between links */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#MenuBar a:last-of-type {
+    margin-right: 0; /* remove margin-right on the last link */
+}
+
+#MenuBar a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#Login {
+    margin-left: auto; /* push the link to the right */
+    text-decoration: none;
+    color: #fff;
+    background-color: #d63c3c; /* red color */
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out; /* add a smooth transition effect */
+}
+
+#Login:hover {
+    transform: scale(1.1); /* slightly scale up the link on hover */
+    background-color: #ff4646; /* slightly lighter red color on hover */
+}
+
+#main {
+    float: left;
+    width:100%; /* Adjust this value as needed */
+}
+
+#slideBar {
+    float: left;
+    width: 20%; /* Adjust this value as needed */
+}
+
+.postDiv {
+    padding: 10px;
+    margin-bottom: 2px;
+    position: relative;
+    border-style:dashed;
+    border-width:2px;
+    border-top-width:0px;
+    cursor: pointer;
+}
+
+.postDiv h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+
+.postDiv .postContent {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-family: "Bookman Old Style";
+}
+
+.postDiv .postDetails {
+    font-size: 14px;
+    color: gray;
+}
+
+
+.postDiv .postImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 100px;
+    margin: 10px;
+}
+
+.textPages {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.textPages h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.textPages p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+.textPages img{
+    top: 0;
+    right: 0;
+    max-width: 400px;
+    margin: 10px;
+}
+
+.forms {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forms form {
+    display: flex;
+    flex-direction: column;
+}
+
+.forms label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.forms input[type="text"],
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.forms textarea {
+    height: 300px;
+    resize: none;
+}
+
+.forms button[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.forms button[type="submit"]:hover {
+    background-color: #0062cc;
+}
+
+.Link0Css {
+
+}
