@@ -332,9 +332,10 @@ def delete_all_comment_of(post_id):
 def add_like():
     data = request.get_json()
     post_id = str(data['post_id'])
-    if is_like_exsits(post_id) == "True":
+    like_exist = is_like_exsits(post_id)
+    if like_exist["ans"]:
         abort(403, "user already liked this post")
-    add_like_to_users_likes(post_id)
+    add_like_to_users_likes(post_id, like_exist["user_id"])
     db = pool.get_connection()
     query = "update posts set likes_count = likes_count + 1 where id = %s"
     values = (post_id,)
@@ -358,12 +359,11 @@ def is_like_exsits(post_id):
     cursor.close()
     db.close()
     if not record:
-        return "False"
-    return "True"
+        return {"ans": False, "user_id": user_id}
+    return {"ans": True, "user_id": user_id}
 
 
-def add_like_to_users_likes(post_id):
-    user_id = get_user_id_by_cookie()
+def add_like_to_users_likes(post_id, user_id):
     query = "insert into users_likes (user_id,post_id) values (%s,%s)"
     values = (user_id, post_id)
     db = pool.get_connection()

@@ -80,7 +80,7 @@ function PostCardPage() {
                 setPost(response.data[0]);
 
                 const likes_response = await axios.get(`/server_checkLike/${param.id}`)
-                setIsLiked(toBoolean(likes_response.data))
+                setIsLiked(likes_response.data.ans)
                 console.log(likes_response)
             } catch (error) {
                 console.error('Error fetching post:', error);
