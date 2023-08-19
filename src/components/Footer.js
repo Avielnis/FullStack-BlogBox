@@ -17,8 +17,8 @@ const Footer = () => {
             top: 'auto'
         }}>
             <Toolbar>
-                <Grid container spacing={3} alignItems="center">
-                    <Grid item xs={6} sm={6} md={4}>
+                <Grid container spacing={3} alignItems="center" flexDirection={{ xs: 'column', sm: 'row' }}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <Box textAlign="center">
                             <Box display="flex" justifyContent="center" gap={2}>
                                 <IconButton href="https://www.facebook.com/ben.shaya.5" target="_blank" rel="noreferrer" sx={{ '&:hover': { color: '#1a237e' } }}>
@@ -41,7 +41,7 @@ const Footer = () => {
                         </Typography>
                     </Grid>
 
-                    <Grid item xs={6} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <Box textAlign="center">
                             <Box display="flex" justifyContent="center" gap={2}>
                                 <IconButton href="https://www.facebook.com/avielni" target="_blank" rel="noreferrer" sx={{ '&:hover': { color: '#1a237e' } }}>
