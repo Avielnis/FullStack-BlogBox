@@ -4,8 +4,9 @@ footer {
     padding: 20px 0;
     margin-top: 40px;
     font-family: 'Roboto Condensed', sans-serif;
-    position: relative; /* Ensure it stays at the bottom */
-    clear: both; /* Clear any floats */
+    position: absolute; /* Add this line */
+    bottom: 0;         /* Add this line */
+    width: 100%;
 }
 
 footer a {

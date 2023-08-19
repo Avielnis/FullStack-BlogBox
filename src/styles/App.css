@@ -164,5 +164,14 @@ textarea {
 .Link0Css {
 
 }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#main-content {
+    flex-grow: 1; /* this will take up all available space */
+}
 
 
