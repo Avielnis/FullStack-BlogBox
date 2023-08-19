@@ -19,33 +19,33 @@ pool = mysql.pooling.MySQLConnectionPool(
     pool_name="blog_aviel"
 )
 
-# app = Flask(__name__,
-#             static_folder=r'C:\Users\Aviel\IDC\Full-stack\finalBlog\build',
-#             static_url_path='/')
-#
-#
-# @app.route('/Welcome')
-# @app.route('/About')
-# @app.route('/NewPost')
-# @app.route('/posts')
-# @app.route('/Login')
-# @app.route('/Profile')
-# @app.route('/Logout')
-# @app.route('/SignUp')
-# @app.route('/forgotPass')
-# @app.route('/EditPassword')
-# @app.route('/')
-# def index():
-#     return app.send_static_file('index.html')
-#
-#
-# @app.route('/posts/<post_id>')
-# @app.route('/EditPost/<post_id>')
-# def index2(post_id):
-#     return app.send_static_file('index.html')
+app = Flask(__name__,
+            static_folder=r'C:\Users\Aviel\IDC\Full-stack\finalBlog\build',
+            static_url_path='/')
 
 
-#### for local use
+@app.route('/Welcome')
+@app.route('/About')
+@app.route('/NewPost')
+@app.route('/posts')
+@app.route('/Login')
+@app.route('/Profile')
+@app.route('/Logout')
+@app.route('/SignUp')
+@app.route('/forgotPass')
+@app.route('/EditPassword')
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
+
+
+@app.route('/posts/<post_id>')
+@app.route('/EditPost/<post_id>')
+def index2(post_id):
+    return app.send_static_file('index.html')
+
+
+# #### for local use
 # pool = mysql.pooling.MySQLConnectionPool(
 #     host="localhost",
 #     user="root",
@@ -55,7 +55,7 @@ pool = mysql.pooling.MySQLConnectionPool(
 #     pool_size=5,
 #     pool_name="blog_aviel"
 # )
-app = Flask(__name__)
+# app = Flask(__name__)
 
 INDEX_OF_CREATED_AT = 4
 
@@ -330,16 +330,48 @@ def delete_all_comment_of(post_id):
 #######################################################
 @app.route('/server_posts/addLike', methods=['POST'])
 def add_like():
-    db = pool.get_connection()
     data = request.get_json()
+    post_id = str(data['post_id'])
+    if is_like_exsits(post_id) == "True":
+        abort(403, "user already liked this post")
+    add_like_to_users_likes(post_id)
+    db = pool.get_connection()
     query = "update posts set likes_count = likes_count + 1 where id = %s"
-    values = (str(data['post_id']),)
+    values = (post_id,)
     cursor = db.cursor()
     cursor.execute(query, values)
     db.commit()
     cursor.close()
     db.close()
     return get_post(data['post_id'])
+
+
+@app.route('/server_checkLike/<int:post_id>', methods=['GET'])
+def is_like_exsits(post_id):
+    user_id = get_user_id_by_cookie()
+    db = pool.get_connection()
+    query = "select user_id,post_id from users_likes where user_id=%s and post_id=%s"
+    values = (user_id, post_id)
+    cursor = db.cursor()
+    cursor.execute(query, values)
+    record = cursor.fetchall()
+    cursor.close()
+    db.close()
+    if not record:
+        return "False"
+    return "True"
+
+
+def add_like_to_users_likes(post_id):
+    user_id = get_user_id_by_cookie()
+    query = "insert into users_likes (user_id,post_id) values (%s,%s)"
+    values = (user_id, post_id)
+    db = pool.get_connection()
+    cursor = db.cursor()
+    cursor.execute(query, values)
+    db.commit()
+    cursor.close()
+    db.close()
 
 
 #######################################################
@@ -599,6 +631,13 @@ def authenticate_user(owner_user_email):
     user_id = get_session(session_id)['user_id']
     logdin_user_email = get_user_email_by_user(user_id)
     return owner_user_email == logdin_user_email
+
+
+def get_user_id_by_cookie():
+    session_id = request.cookies.get("session_id")
+    if not session_id:
+        abort(401, "No user session exists - Please Login")
+    return get_session(session_id)['user_id']
 
 
 #######################################################

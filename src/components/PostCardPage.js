@@ -22,6 +22,7 @@ import AddComment from './AddComment';
 import EditIcon from '@mui/icons-material/Edit';
 import {extractErrorMessage, userInfo} from './Login';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
+import toBoolean from "validator/es/lib/toBoolean";
 
 const ExpandMore = styled((props) => {
     const {expand, ...other} = props;
@@ -66,7 +67,7 @@ const cardStyles = {
 function PostCardPage() {
     const [expanded, setExpanded] = useState(false);
     const [post, setPost] = useState(null);
-    const [isFavorite, setIsFavorite] = useState(false);
+    const [isLiked, setIsLiked] = useState(false);
     const [comments, setComments] = useState([]);
     const [isDeleteing, setIsDeleting] = useState(false)
     const navigate = useNavigate();
@@ -77,13 +78,17 @@ function PostCardPage() {
             try {
                 const response = await axios.get(`/server_posts/${param.id}`);
                 setPost(response.data[0]);
+
+                const likes_response = await axios.get(`/server_checkLike/${param.id}`)
+                setIsLiked(toBoolean(likes_response.data))
+                console.log(likes_response)
             } catch (error) {
                 console.error('Error fetching post:', error);
             }
         };
 
         fetchPost();
-    }, [isFavorite]);
+    }, []);
 
     if (!post || isDeleteing) {
         return <LinearProgress color="success"/>;
@@ -104,11 +109,11 @@ function PostCardPage() {
         });
     };
 
-    const handleFavoriteClick = () => {
-        if (isFavorite === true) {
+    const handleLikeClick = () => {
+        if (isLiked === true) {
             return;
         }
-        setIsFavorite(!isFavorite);
+        setIsLiked(!isLiked);
         const url = '/server_posts/addLike';
         const data = {
             post_id: post.id,
@@ -159,7 +164,8 @@ function PostCardPage() {
             <Card sx={cardStyles.card}>
                 <CardHeader
                     avatar={
-                        <Avatar sx={{bgcolor: red[500]}} aria-label="recipe" > {/*onClick={() => navigate("/Profile/")}>*/}
+                        <Avatar sx={{bgcolor: red[500]}}
+                                aria-label="recipe"> {/*onClick={() => navigate("/Profile/")}>*/}
                             {post.author[0]}
                         </Avatar>
                     }
@@ -188,8 +194,8 @@ function PostCardPage() {
                     <IconButton aria-label="add to favorites">
                         <Badge badgeContent={post.likes_count} color="primary">
                             <FavoriteIcon
-                                onClick={handleFavoriteClick}
-                                sx={{color: isFavorite ? '#FF7F50' : 'gray'}}
+                                onClick={handleLikeClick}
+                                sx={{color: isLiked ? '#FF7F50' : 'gray'}}
                             />
                         </Badge>
                     </IconButton>

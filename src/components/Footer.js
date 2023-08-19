@@ -6,7 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
     return (
-        <AppBar position="fixed" color="default" sx={{
+        <AppBar position="sticky" color="default" sx={{
             backgroundColor: '#e0e0e0',
             padding: '5px 0',
             marginTop: '10px',
