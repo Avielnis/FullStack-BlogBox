@@ -40,6 +40,7 @@
     transform: scale(1.1); /* slightly scale up the link on hover */
     background-color: #ff4646; /* slightly lighter red color on hover */
 }
+
 /*#main {*/
 /*    float: left;*/
 /*    width:100%; !* Adjust this value as needed *!*/
@@ -54,9 +55,9 @@
     padding: 10px;
     margin-bottom: 2px;
     position: relative;
-    border-style:dashed;
-    border-width:2px;
-    border-top-width:0px;
+    border-style: dashed;
+    border-width: 2px;
+    border-top-width: 0px;
     cursor: pointer;
 }
 
@@ -103,7 +104,8 @@
     font-size: 18px;
     line-height: 1.5;
 }
-.textPages img{
+
+.textPages img {
     top: 0;
     right: 0;
     max-width: 400px;
@@ -162,3 +164,5 @@ textarea {
 .Link0Css {
 
 }
+
+

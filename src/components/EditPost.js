@@ -67,7 +67,7 @@ function EditPost() {
             post_id: param.id,
             user_email: userInfo.value.email
         }
-        axios.put(url, data,{headers: {'Content-Type': 'multipart/form-data'}})
+        axios.put(url, data, {headers: {'Content-Type': 'multipart/form-data'}})
             .then((res) => {
                 console.log(res.data);
                 setSubmitted(true)
@@ -97,7 +97,10 @@ function EditPost() {
                     spacing={2}
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': {m: 1, width: '50ch'},
+                        '& .MuiTextField-root': {
+                            m: 1,
+                            width: {xs: '90%', sm: '80%', md: '50ch'} // Responsive width
+                        },
                         alignItems: "center",
                     }}
                     noValidate

@@ -15,6 +15,7 @@ import EditPost from "./components/EditPost";
 import ForgotPass from "./components/ForgotPass";
 import ChangePassword from "./components/ChangePassword";
 import Footer from "./components/Footer";
+import Fab from "@mui/material/Fab";
 
 function App() {
     loginWithSession()
@@ -40,8 +41,8 @@ function App() {
                     <Route path={'/EditPassword'} Component={ChangePassword}></Route>
                 </Routes>
             </div>
-            <div>
-                <Footer />
+            <div id="footer">
+                <Footer/>
             </div>
         </div>
 

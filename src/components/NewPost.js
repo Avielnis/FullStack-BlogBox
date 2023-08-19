@@ -70,9 +70,15 @@ function NewPost() {
                 spacing={2}
                 component="form"
                 sx={{
-                    '& .MuiTextField-root': {m: 1, width: '50ch'},
+                    '& .MuiTextField-root': {
+                        m: 1,
+                        width: {xs: '90%', sm: '80%', md: '50ch'} // Responsive width
+                    },
                     alignItems: "center",
-                    margin: '0 auto'
+                    margin: '0 auto',
+                    display: 'flex',
+                    flexDirection: 'column'
+
                 }}
                 noValidate
                 autoComplete="off"
@@ -126,7 +132,7 @@ function NewPost() {
                             required
                             helperText="What is on your mind?"
                         />
-                        <div style={{marginBottom: '16px',alignItems :"self-start"}}>
+                        <div style={{marginBottom: '16px', alignItems: "self-start"}}>
                             <Button variant="outlined" component="label" startIcon={<UploadFileIcon/>}>
                                 Upload Image
                                 <FileInput type="file"
