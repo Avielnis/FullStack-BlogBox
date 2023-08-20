@@ -1,25 +1,21 @@
 function AboutMe(props) {
     return (
-        <div id='aboutMeComponent' className='textPages'>
+        <div id='aboutMeComponent' className='textPages' style={{ width: '100%', height: '100vh'}}>
             <h1>A Little About Us</h1>
-            <p>
-                As students, we are constantly learning and growing.
-                We are passionate about our education and always strive to achieve our goals.
+            <p style={{ lineHeight: '2.6' }} >
+                As students continually learning and growing, our passion for education drives us to excel.
+                The desire for success leads us to embrace every opportunity, exploring new ideas with an open mind.
+                Engaging in studies, extracurriculars, and personal pursuits, we seek challenges that push us beyond limits.
 
-                We are driven to succeed and work hard to make the most of our opportunities.
-                We are curious and open-minded individuals, always eager to expand our horizons and explore new ideas.
-                We are always looking for ways to challenge ourselves and push beyond our limits.
+                Collaboration and curiosity guide our teamwork, while dedication and responsibility help us balance academic and personal life.
+                Our focus on success does not overshadow the importance of mental well-being, self-care, and enjoyment outside studies.
 
-                Whether it's through our studies, extracurricular activities, or personal pursuits,
-                we are always looking for ways to grow and improve.
-
-                We are also dedicated and responsible people, committed to balancing our academic and personal responsibilities.
-                We are conscientious and focused on achieving our goals,
-                but we also know the importance of taking care of ourselves and enjoying our lives outside of our studies.
-
-                Overall, we are motivated and enthusiastic students, eager to make the most of our educational experience and prepare ourselves for successful futures
+                Active participation in student organizations, connections with mentors, and involvement in social events shape our college experience.
+                In essence, our ambition and resilience prepare us for a future of success, defining a community that's academically driven,
+                compassionate, and ready for what lies ahead.
 
             </p>
+
             <img
                 src='https://raw.githubusercontent.com/gist/UddeshJain/90646446c86e45c494d6e69bfc3005f1/raw/b15bee8a8b85f8740795b92c1878ab8ed9ec2204/About%20Me.gif'
                 alt=''/>
