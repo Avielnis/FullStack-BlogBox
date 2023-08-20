@@ -9,6 +9,7 @@ import axios from "axios";
 import {extractErrorMessage, userInfo} from "./Login";
 import {styled} from "@mui/material/styles";
 import UploadFileIcon from '@mui/icons-material/UploadFile';
+import CardMedia from "@mui/material/CardMedia";
 
 function NewPost() {
     const [Title, setTitle] = useState('');
@@ -140,6 +141,16 @@ function NewPost() {
                                 />
                             </Button>
                             {Img && <p>Selected file: {Img.name}</p>}
+                            {Img && (
+                                <CardMedia
+                                    component="img"
+                                    height="194"
+                                    image={URL.createObjectURL(Img)}
+                                    alt=""
+                                    height="250"
+                                    sx={{marginBottom: '16px'}}
+                                />
+                            )}
                         </div>
                         <Button
                             variant="contained"
