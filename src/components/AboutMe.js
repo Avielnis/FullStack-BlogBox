@@ -1,22 +1,24 @@
 function AboutMe(props) {
     return (
         <div id='aboutMeComponent' className='textPages'>
-            <h1>A Little About Me</h1>
+            <h1>A Little About Us</h1>
             <p>
-                As a student, I am constantly learning and growing. I am passionate about my education and always strive
-                to achieve my goals. I am driven to succeed and work hard to make the most of my opportunities.
+                As students, we are constantly learning and growing.
+                We are passionate about our education and always strive to achieve our goals.
 
-                I am a curious and open-minded individual, always eager to expand my horizons and explore new ideas. I
-                am always looking for ways to challenge myself and push beyond my limits. Whether it's through my
-                studies, extracurricular activities, or personal pursuits, I am always looking for ways to grow and
-                improve.
+                We are driven to succeed and work hard to make the most of our opportunities.
+                We are curious and open-minded individuals, always eager to expand our horizons and explore new ideas.
+                We are always looking for ways to challenge ourselves and push beyond our limits.
 
-                I am also a dedicated and responsible person, committed to balancing my academic and personal
-                responsibilities. I am conscientious and focused on achieving my goals, but I also know the importance
-                of taking care of myself and enjoying my life outside of my studies.
+                Whether it's through our studies, extracurricular activities, or personal pursuits,
+                we are always looking for ways to grow and improve.
 
-                Overall, I am a motivated and enthusiastic student, eager to make the most of my educational experience
-                and prepare myself for a successful future.
+                We are also dedicated and responsible people, committed to balancing our academic and personal responsibilities.
+                We are conscientious and focused on achieving our goals,
+                but we also know the importance of taking care of ourselves and enjoying our lives outside of our studies.
+
+                Overall, we are motivated and enthusiastic students, eager to make the most of our educational experience and prepare ourselves for successful futures
+
             </p>
             <img
                 src='https://raw.githubusercontent.com/gist/UddeshJain/90646446c86e45c494d6e69bfc3005f1/raw/b15bee8a8b85f8740795b92c1878ab8ed9ec2204/About%20Me.gif'
