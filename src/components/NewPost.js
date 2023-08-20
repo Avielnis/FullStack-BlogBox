@@ -66,7 +66,7 @@ function NewPost() {
 
 
     return (
-        <div style={{ width: '100%', height: '100vh' }}>
+        <div>
             <Stack
                 spacing={2}
                 component="form"
