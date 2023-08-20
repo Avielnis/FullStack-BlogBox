@@ -55,6 +55,11 @@ function NewPost() {
     };
 
     useEffect(() => {
+
+        if (!userInfo.value){
+            setErrorMessage("Please Login!");
+        }
+
         if (submitted) {
             setTimeout(() => {
                 setSubmitted(false);

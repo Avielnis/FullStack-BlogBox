@@ -110,7 +110,7 @@ function PostCardPage() {
     };
 
     const handleLikeClick = () => {
-        if (isLiked === true) {
+        if (isLiked === true || !userInfo.value) {
             return;
         }
         setIsLiked(!isLiked);

@@ -21,7 +21,8 @@ import Popular from "./components/Popular";
 function App() {
     loginWithSession()
 
-    return (<div className="App">
+    return (
+        <div className="App">
 
             <ResponsiveAppBar/>
 
@@ -43,8 +44,9 @@ function App() {
                     <Route path={'/Popular'} Component={Popular}></Route>
                 </Routes>
             </div>
+
             <div id="footer">
-                <Footer/>
+                    <Footer/>
             </div>
         </div>
 
