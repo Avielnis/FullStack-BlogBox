@@ -34,6 +34,7 @@ app = Flask(__name__,
 @app.route('/SignUp')
 @app.route('/forgotPass')
 @app.route('/EditPassword')
+@app.route('/Popular')
 @app.route('/')
 def index():
     return app.send_static_file('index.html')
@@ -323,6 +324,40 @@ def delete_all_comment_of(post_id):
     db.commit()
     cursor.close()
     db.close()
+
+
+#######################################################
+#                      POPULAR
+#######################################################
+
+@app.route('/server_popularLikes')
+def get_posts_by_likes_count():
+    query = "select posts.id, users.full_name, title, content, created_at, imgURL, likes_count from posts join " \
+            "users on posts.user_email = users.email " \
+            "order by likes_count desc limit 4"
+    db = pool.get_connection()
+    cursor = db.cursor()
+    cursor.execute(query)
+    records = cursor.fetchall()
+    cursor.close()
+    db.close()
+    header = ['id', 'author', 'title', 'content', 'created_at', 'imgURL', 'likes_count']
+    return convert_to_json(records, header, time_index=INDEX_OF_CREATED_AT, img_index=5)
+
+
+@app.route('/server_popularCommented')
+def get_posts_by_comments_count():
+    query = """select posts.id, users.full_name, posts.title, posts.content, posts.created_at, posts.imgURL, posts.likes_count,
+     COUNT(comments.id) as comment_count from posts join users on posts.user_email = users.email left join comments 
+     on posts.id = comments.post_id group by posts.id order by comment_count desc limit 4"""
+    db = pool.get_connection()
+    cursor = db.cursor()
+    cursor.execute(query)
+    records = cursor.fetchall()
+    cursor.close()
+    db.close()
+    header = ['id', 'author', 'title', 'content', 'created_at', 'imgURL', 'likes_count', 'comments_count']
+    return convert_to_json(records, header, time_index=INDEX_OF_CREATED_AT, img_index=5)
 
 
 #######################################################

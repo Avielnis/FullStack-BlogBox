@@ -19,7 +19,7 @@ import {useEffect, useState} from "react";
 
 
 function ResponsiveAppBar() {
-    const pages = ['Welcome', 'About', 'NewPost'];
+    const pages = ['Welcome', 'About', 'NewPost','Popular'];
     const [settings, setSettings] = useState(userInfo.value === null ? ['Login', 'SignUp'] : ['Profile', 'Logout']);
     useEffect(() => {
         // Update settings whenever userInfo.value changes
