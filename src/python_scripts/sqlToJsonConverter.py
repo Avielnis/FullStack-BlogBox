@@ -5,12 +5,15 @@ from aws_s3_handler import check_file_url
 def convert_to_json(records, headers, time_index=-1, img_index=-1):
     data = []
     for row in records:
-        if time_index != -1:
+        if time_index != -1 or img_index != -1:
             row = list(row)
+
+        if time_index != -1:
             row[time_index] = row[time_index].strftime("%Y-%m-%d %H:%M:%S")
-        # if img_index != -1:
-        #     row = list(row)
-        #     row[img_index] = check_file_url(row[img_index])
+
+        if img_index != -1 and row[img_index].startswith("https://aviel-nisanov-bucket.s3"):
+            row[img_index] = check_file_url(row[img_index])
+
         data.append(dict(zip(headers, row)))
     return json.dumps(data)
 
