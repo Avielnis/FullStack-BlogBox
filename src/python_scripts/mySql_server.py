@@ -172,6 +172,11 @@ def add_post():
 
 def update_post():
     data = request.form
+
+    owner_user_email = get_user_email_by_post(data['post_id'])
+    if not authenticate_user(owner_user_email):
+        abort(403, f"This post was writen by {owner_user_email}, You cant edit this post")
+
     imgURL = ""
     if len(request.files) != 0:
         img_file = request.files['imgURL']
@@ -180,11 +185,6 @@ def update_post():
         imgURL = aws.get_file_url(img_file)
     else:
         imgURL = data['imgURL']
-
-    data = request.form
-    owner_user_email = get_user_email_by_post(data['post_id'])
-    if not authenticate_user(owner_user_email):
-        abort(403, f"This post was writen by {owner_user_email}, You cant edit this post")
 
     old_img_url = get_img_url(data['post_id'])
     db = pool.get_connection()
