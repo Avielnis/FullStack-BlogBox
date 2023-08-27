@@ -1,6 +1,5 @@
 import React from 'react';
-import {Container} from "@mui/material";
-import {Grid} from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 import ResponsiveAppBar from "./components/ResponsivAppBar";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
@@ -23,40 +22,42 @@ function App() {
     loginWithSession();
 
     return (
-        <div className="App">
+        <Box display="flex" flexDirection="column" minHeight="100vh">
             <ResponsiveAppBar />
 
-            <Container maxWidth="lg">
-                <Grid container direction="column" style={{ minHeight: '100vh'}}>
-                    <Grid item xs={12} style={{ flex: 1 }}>
-                        <div id="main">
-                            <Routes>
-                                <Route path='/' element={<PostsCards />} />
-                                <Route path='/welcome' element={<Welcome />} />
-                                <Route path='/about' element={<AboutMe />} />
-                                <Route path='/newPost' element={<NewPost />} />
-                                <Route path='/posts/:id' element={<PostCardPage />} />
-                                <Route path='/posts' element={<PostsCards />} />
-                                <Route path='/login' element={<Login_or_signUp />} />
-                                <Route path='/profile' element={<Profile />} />
-                                <Route path='/logout' element={<Logout />} />
-                                <Route path='/signup' element={<SignUp />} />
-                                <Route path='/editPost/:id' element={<EditPost />} />
-                                <Route path='/forgotPass' element={<ForgotPass />} />
-                                <Route path='/EditPassword' element={<ChangePassword />} />
-                                <Route path='/Popular' element={<Popular />} />
-                            </Routes>
-                        </div>
+            <Box flexGrow={1}>
+                <Container maxWidth={false}>
+                    <Grid container direction="column" style={{ minHeight: '100%' }}>
+                        <Grid item xs={12} style={{ flex: 1 }}>
+                            <div id="main">
+                                <Routes>
+                                    <Route path='/' element={<PostsCards />} />
+                                    <Route path='/welcome' element={<Welcome />} />
+                                    <Route path='/about' element={<AboutMe />} />
+                                    <Route path='/newPost' element={<NewPost />} />
+                                    <Route path='/posts/:id' element={<PostCardPage />} />
+                                    <Route path='/posts' element={<PostsCards />} />
+                                    <Route path='/login' element={<Login_or_signUp />} />
+                                    <Route path='/profile' element={<Profile />} />
+                                    <Route path='/logout' element={<Logout />} />
+                                    <Route path='/signup' element={<SignUp />} />
+                                    <Route path='/editPost/:id' element={<EditPost />} />
+                                    <Route path='/forgotPass' element={<ForgotPass />} />
+                                    <Route path='/Edit Password' element={<ChangePassword />} />
+                                    <Route path='/Popular' element={<Popular />} />
+                                </Routes>
+                            </div>
+                        </Grid>
                     </Grid>
+                </Container>
 
-                    <Grid item xs={12}>
-                        <div id="footer">
-                            <Footer />
-                        </div>
-                    </Grid>
-                </Grid>
-            </Container>
-        </div>
+                <div style={{height:'50px'}}></div>
+            </Box>
+
+            <Box>
+                <Footer />
+            </Box>
+        </Box>
     );
 }
 
