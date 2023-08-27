@@ -20,7 +20,7 @@ pool = mysql.pooling.MySQLConnectionPool(
 )
 
 app = Flask(__name__,
-            static_folder=r'C:\Users\aviel\IDC\Full-Stack\Final-Blog\build',
+            static_folder=r'C:\Users\Aviel\IDC\Full-stack\finalBlog\build',
             static_url_path='/')
 
 

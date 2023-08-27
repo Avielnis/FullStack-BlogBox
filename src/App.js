@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+import {Container} from "@mui/material";
+import {Grid} from "@mui/material";
 import ResponsiveAppBar from "./components/ResponsivAppBar";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
@@ -27,7 +27,7 @@ function App() {
             <ResponsiveAppBar />
 
             <Container maxWidth="lg">
-                <Grid container direction="column" style={{ minHeight: '100vh' }}>
+                <Grid container direction="column" style={{ minHeight: '100vh'}}>
                     <Grid item xs={12} style={{ flex: 1 }}>
                         <div id="main">
                             <Routes>
