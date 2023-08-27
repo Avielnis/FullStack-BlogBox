@@ -8,6 +8,8 @@ footer {
     bottom: 0;         /* Add this line */
     width: 100%;
     flex-grow: 0;
+    flex-shrink: 0;
+
 }
 
 footer a {

@@ -1,55 +1,62 @@
-import './styles/App.css';
+import React from 'react';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import ResponsiveAppBar from "./components/ResponsivAppBar";
+import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
 import AboutMe from "./components/AboutMe";
-import {Routes, Route} from "react-router-dom";
 import Welcome from "./components/Welcome";
 import NewPost from "./components/NewPost";
-import ResponsiveAppBar from "./components/ResponsivAppBar";
 import PostsCards from "./components/PostsCards";
 import PostCardPage from "./components/PostCardPage";
 import Login_or_signUp from "./components/Login_or_signUp";
-import Profile from "./components/Profile"
+import Profile from "./components/Profile";
 import Logout from "./components/Logout";
 import SignUp from "./components/SignUp";
-import {loginWithSession, userInfo} from "./components/Login";
 import EditPost from "./components/EditPost";
 import ForgotPass from "./components/ForgotPass";
 import ChangePassword from "./components/ChangePassword";
-import Footer from "./components/Footer";
 import Popular from "./components/Popular";
-
+import { loginWithSession } from "./components/Login";
 
 function App() {
-    loginWithSession()
+    loginWithSession();
 
     return (
         <div className="App">
+            <ResponsiveAppBar />
 
-            <ResponsiveAppBar/>
+            <Container maxWidth="lg">
+                <Grid container direction="column" style={{ minHeight: '100vh' }}>
+                    <Grid item xs={12} style={{ flex: 1 }}>
+                        <div id="main">
+                            <Routes>
+                                <Route path='/' element={<PostsCards />} />
+                                <Route path='/welcome' element={<Welcome />} />
+                                <Route path='/about' element={<AboutMe />} />
+                                <Route path='/newPost' element={<NewPost />} />
+                                <Route path='/posts/:id' element={<PostCardPage />} />
+                                <Route path='/posts' element={<PostsCards />} />
+                                <Route path='/login' element={<Login_or_signUp />} />
+                                <Route path='/profile' element={<Profile />} />
+                                <Route path='/logout' element={<Logout />} />
+                                <Route path='/signup' element={<SignUp />} />
+                                <Route path='/editPost/:id' element={<EditPost />} />
+                                <Route path='/forgotPass' element={<ForgotPass />} />
+                                <Route path='/EditPassword' element={<ChangePassword />} />
+                                <Route path='/Popular' element={<Popular />} />
+                            </Routes>
+                        </div>
+                    </Grid>
 
-            <div id="main">
-                <Routes>
-                    <Route path='/' Component={PostsCards}></Route>
-                    <Route path='/welcome' Component={Welcome}></Route>
-                    <Route path='/about' Component={AboutMe}></Route>
-                    <Route path='/newPost' Component={NewPost}></Route>
-                    <Route path='/posts/:id' Component={PostCardPage}></Route>
-                    <Route exact path='/posts' Component={PostsCards}></Route>
-                    <Route path='/login' Component={Login_or_signUp}></Route>
-                    <Route path={'/profile'} Component={Profile}></Route>
-                    <Route path={'/logout'} Component={Logout}></Route>
-                    <Route path={'/signup'} Component={SignUp}></Route>
-                    <Route path={'/editPost/:id'} Component={EditPost}></Route>
-                    <Route path={'/forgotPass'} Component={ForgotPass}></Route>
-                    <Route path={'/EditPassword'} Component={ChangePassword}></Route>
-                    <Route path={'/Popular'} Component={Popular}></Route>
-                </Routes>
-            </div>
-
-            <div id="footer">
-                    <Footer/>
-            </div>
+                    <Grid item xs={12}>
+                        <div id="footer">
+                            <Footer />
+                        </div>
+                    </Grid>
+                </Grid>
+            </Container>
         </div>
-
     );
 }
 
