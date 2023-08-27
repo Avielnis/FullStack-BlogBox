@@ -126,8 +126,8 @@ function Login() {
                 }}>Forgot Password?</Link>
                 <Button variant="contained" onClick={handleSubmit}>Login</Button>
 
-                <GoogleSignIn_v1/>
-                {/*<GoogleSignIn_v2/>*/}
+                {/*<GoogleSignIn_v1/>*/}
+                <GoogleSignIn_v2/>
                 <FacebookSignIn/>
             </Stack>
         </div>
