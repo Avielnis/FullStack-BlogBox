@@ -27,9 +27,9 @@ function App() {
 
             <Box flexGrow={1}>
                 <Container maxWidth={false}>
-                    <Grid container direction="column" style={{ minHeight: '100%' }}>
+                    <Grid container direction="column" style={{ minHeight: '100%' }} >
                         <Grid item xs={12} style={{ flex: 1 }}>
-                            <div id="main">
+                            <div id="main" maxWidth={false}>
                                 <Routes>
                                     <Route path='/' element={<PostsCards />} />
                                     <Route path='/welcome' element={<Welcome />} />
@@ -51,7 +51,7 @@ function App() {
                     </Grid>
                 </Container>
 
-                <div style={{height:'50px'}}></div>
+                {/*<div style={{height:'50px'}}></div>*/}
             </Box>
 
             <Box>
