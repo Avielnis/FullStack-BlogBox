@@ -1,13 +1,13 @@
 import {LoginSocialGoogle} from "reactjs-social-login";
 import {GoogleLoginButton} from "react-social-login-buttons";
-import {userInfo} from "./Login";
+import {userInfo} from "../components/Login";
 import {useNavigate} from "react-router-dom";
-import {google_client_id} from "./settings";
+import {google_client_id} from "../components/settings";
 import axios from "axios";
 import {CircularProgress} from "@mui/material";
 import {useState} from "react";
 
-function GoogleSignIn() {
+function GoogleSignIn_v2() {
 
     const navigate = useNavigate()
     const [clicked, setClicked] = useState(false)
@@ -42,4 +42,4 @@ function GoogleSignIn() {
     );
 }
 
-export default GoogleSignIn;
+export default GoogleSignIn_v2;

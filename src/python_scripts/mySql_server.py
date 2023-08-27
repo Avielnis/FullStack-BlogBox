@@ -682,6 +682,8 @@ def get_user_id_by_cookie():
 @app.route('/server_login_social', methods=["POST"])
 def login_social():
     data = request.get_json()
+    if not "email" in data:
+        abort(401, "Email Missing")
     if not user_exists(data["email"]):
         db = pool.get_connection()
         query = "insert into users (email,password,full_name,profile_img) values (%s,%s,%s,%s)"
