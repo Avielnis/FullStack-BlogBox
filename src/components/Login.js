@@ -13,7 +13,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import FacebookSignIn from "./FacebookSignIn";
-import GoogleSignIn from "./GoogleSighIn";
+import GoogleSignIn_v1 from "./GoogleSighIn_v1";
+import GoogleSignIn_v2 from "../not_used_components/GoogleSignIn_v2";
 
 
 export const extractErrorMessage = (htmlText) => {
@@ -125,7 +126,8 @@ function Login() {
                 }}>Forgot Password?</Link>
                 <Button variant="contained" onClick={handleSubmit}>Login</Button>
 
-                <GoogleSignIn/>
+                <GoogleSignIn_v1/>
+                {/*<GoogleSignIn_v2/>*/}
                 <FacebookSignIn/>
             </Stack>
         </div>

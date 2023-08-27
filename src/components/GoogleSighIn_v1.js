@@ -6,7 +6,7 @@ import {userInfo} from "./Login";
 import {useNavigate} from "react-router-dom";
 import {CircularProgress} from "@mui/material";
 
-function GoogleSignIn() {
+function GoogleSignIn_v1() {
 
     const navigate = useNavigate()
     const [clicked, setClicked] = useState(false)
@@ -53,4 +53,4 @@ function GoogleSignIn() {
     );
 }
 
-export default GoogleSignIn;
+export default GoogleSignIn_v1;
