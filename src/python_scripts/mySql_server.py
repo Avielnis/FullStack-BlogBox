@@ -18,35 +18,36 @@ pool = mysql.pooling.MySQLConnectionPool(
     pool_size=5,
     pool_name="blog_aviel"
 )
+#
+# app = Flask(__name__,
+#             static_folder=r'C:\Users\Aviel\IDC\Full-stack\finalBlog\build',
+#             static_url_path='/')
+#
+#
+# # noinspection PyInterpreter
+# @app.route('/Welcome')
+# @app.route('/About')
+# @app.route('/NewPost')
+# @app.route('/posts')
+# @app.route('/Login')
+# @app.route('/Profile')
+# @app.route('/Logout')
+# @app.route('/SignUp')
+# @app.route('/forgotPass')
+# @app.route('/EditPassword')
+# @app.route('/Popular')
+# @app.route('/')
+# def index():
+#     return app.send_static_file('index.html')
+#
+#
+# @app.route('/posts/<post_id>')
+# @app.route('/EditPost/<post_id>')
+# def index2(post_id):
+#     return app.send_static_file('index.html')
 
-app = Flask(__name__,
-            static_folder=r'C:\Users\Aviel\IDC\Full-stack\finalBlog\build',
-            static_url_path='/')
 
-
-@app.route('/Welcome')
-@app.route('/About')
-@app.route('/NewPost')
-@app.route('/posts')
-@app.route('/Login')
-@app.route('/Profile')
-@app.route('/Logout')
-@app.route('/SignUp')
-@app.route('/forgotPass')
-@app.route('/EditPassword')
-@app.route('/Popular')
-@app.route('/')
-def index():
-    return app.send_static_file('index.html')
-
-
-@app.route('/posts/<post_id>')
-@app.route('/EditPost/<post_id>')
-def index2(post_id):
-    return app.send_static_file('index.html')
-
-
-# #### for local use
+#### for local use
 # pool = mysql.pooling.MySQLConnectionPool(
 #     host="localhost",
 #     user="root",
@@ -56,7 +57,7 @@ def index2(post_id):
 #     pool_size=5,
 #     pool_name="blog_aviel"
 # )
-# app = Flask(__name__)
+app = Flask(__name__)
 
 INDEX_OF_CREATED_AT = 4
 
