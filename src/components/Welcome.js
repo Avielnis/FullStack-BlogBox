@@ -6,6 +6,7 @@ function Welcome() {
 
             <h1>Welcome to our blog!</h1>
             <p>
+
                 Our names are Aviel Nisanov and Ben Shaya, and we're thrilled to have you here.
 
                 To get started, simply click on the Posts button to see all of our latest articles and updates. Whether you're interested in technology, business, or just want to stay up-to-date on the latest news and trends, you're sure to find something that piques your interest.
