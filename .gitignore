@@ -10,7 +10,7 @@ src/python_scripts/settings.py
 
 # production
 /build
-
+/.idea
 # misc
 .DS_Store
 .env.local

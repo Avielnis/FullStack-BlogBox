@@ -51,7 +51,6 @@ function App() {
                     </Grid>
                 </Container>
 
-                {/*<div style={{height:'50px'}}></div>*/}
             </Box>
 
             <Box>
