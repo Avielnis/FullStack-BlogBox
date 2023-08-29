@@ -27,3 +27,4 @@ yarn-error.log*
 /src/components/hw5-FullStack.iml
 /src/python_scripts/confiramtion_email.py
 /src/components/settings.js
+/.idea/
