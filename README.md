@@ -1,5 +1,5 @@
 ## Public DNS:
-http://ec2-3-121-181-159.eu-central-1.compute.amazonaws.com:5000
+http://ec2-35-158-213-121.eu-central-1.compute.amazonaws.com:5000
 
 # Getting Started
 This projects UI was made with Material UI
