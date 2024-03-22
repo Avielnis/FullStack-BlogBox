@@ -1,18 +1,29 @@
-# Getting Started
-This projects UI was made with Material UI
+# Tales By Aviel
 
-create file settings.py in src/python_scripts and inside put the line:
+Tales By Aviel blogBox is a web application designed for blogging and content sharing.
+It provides a platform where users can create, edit, and delete blog posts. 
+The user interface is built using Material UI, offering a modern and visually appealing experience.
 
-dbpass = "your_mysql_password"
+
+<img src="assets/homePage.png" width="800" style="margin-bottom: 20px;" >
+
+<div style="display: flex; margin-bottom: 20px;">
+    <img src="assets/welcome.png"  alt="Welcome" width="500" style="margin-left: 20px; margin-right: 20px">
+    <img src="assets/newPost.png" alt="New Post" width="500" style="margin-left: 20px; margin-right: 20px"/>
+</div>
+<div style="display: flex; margin-bottom: 20px;">
+    <img src="assets/popular.png" alt="Popular Posts" width="500" style="margin-right: 20px"/>
+    <img src="assets/postPage.png" alt="Post Page" width="500" style="margin-left: 20px"/>
+</div>
+
+## Features
+
+- **Blogging**: Users can create, edit, and delete blog posts.
+- **User Authentication**: Secure user authentication system for accessing and managing content.
+- **Material UI**: Utilizes Material UI for a modern and visually appealing user interface.
+- **Database Integration**: Integration with MySQL database for storing and managing blog content.
+- **Responsive Design**: Ensures optimal viewing experience across a wide range of devices.
 
 
-# blog_db
-to use the blog_db.sql run:
 
-mysql -u your_username -p -e "CREATE DATABASE blog;"
-mysql -u your_username -p blog < blog_db.sql
 
-# users_Testings
-use credentials to check the website:
-2) test@mail.com, pass13
-   
