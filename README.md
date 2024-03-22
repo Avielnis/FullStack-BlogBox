@@ -8,12 +8,12 @@ The user interface is built using Material UI, offering a modern and visually ap
 <img src="assets/homePage.png" width="800" style="margin-bottom: 20px;" >
 
 <div style="display: flex; margin-bottom: 20px;">
-    <img src="assets/welcome.png"  alt="Welcome" width="500" style="margin-left: 20px; margin-right: 20px">
-    <img src="assets/newPost.png" alt="New Post" width="500" style="margin-left: 20px; margin-right: 20px"/>
+    <img src="assets/welcome.png"  alt="Welcome" width="400" style="margin-left: 20px; margin-right: 20px">
+    <img src="assets/newPost.png" alt="New Post" width="400" style="margin-left: 20px; margin-right: 20px"/>
 </div>
 <div style="display: flex; margin-bottom: 20px;">
-    <img src="assets/popular.png" alt="Popular Posts" width="500" style="margin-right: 20px"/>
-    <img src="assets/postPage.png" alt="Post Page" width="500" style="margin-left: 20px"/>
+    <img src="assets/popular.png" alt="Popular Posts" width="400" style="margin-right: 20px"/>
+    <img src="assets/postPage.png" alt="Post Page" width="400" style="margin-left: 20px"/>
 </div>
 
 ## Features
