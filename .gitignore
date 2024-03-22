@@ -9,7 +9,6 @@ src/python_scripts/settings.py
 /coverage
 
 # production
-/build
 /.idea
 # misc
 .DS_Store
