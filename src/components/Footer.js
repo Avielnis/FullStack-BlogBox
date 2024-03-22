@@ -11,21 +11,6 @@ const Footer = () => {
             <Container>
                 <Box style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Box display="flex" alignItems="center" gap={0}>
-                        <Typography variant="body1">Ben Shaya</Typography>
-                        <IconButton href="https://www.facebook.com/ben.shaya.5" target="_blank" rel="noreferrer" sx={{ '&:hover': { color: '#1a237e' } }}>
-                            <FacebookIcon />
-                        </IconButton>
-                        <IconButton href="https://il.linkedin.com/in/ben-shaya-939948202?trk=people-guest_people_search-card" target="_blank" rel="noreferrer" sx={{ '&:hover': { color: '#1a237e' } }}>
-                            <LinkedInIcon />
-                        </IconButton>
-                        <IconButton href="https://www.instagram.com/ben_shaya/" target="_blank" rel="noreferrer" sx={{ '&:hover': { color: '#1a237e' } }}>
-                            <InstagramIcon />
-                        </IconButton>
-                    </Box>
-                    <Box>
-                        <Typography variant="body1"> © 2023</Typography>
-                    </Box>
-                    <Box display="flex" alignItems="center" gap={0}>
                         <Typography variant="body1">Aviels Nisanov</Typography>
                         <IconButton href="https://www.facebook.com/avielni" target="_blank" rel="noreferrer" sx={{ '&:hover': { color: '#1a237e' } }}>
                             <FacebookIcon />
@@ -36,6 +21,9 @@ const Footer = () => {
                         <IconButton href="https://www.instagram.com/avielnis/" target="_blank" rel="noreferrer" sx={{ '&:hover': { color: '#1a237e' } }}>
                             <InstagramIcon />
                         </IconButton>
+                    </Box>
+                    <Box>
+                        <Typography variant="body1"> © 2023</Typography>
                     </Box>
                 </Box>
             </Container>

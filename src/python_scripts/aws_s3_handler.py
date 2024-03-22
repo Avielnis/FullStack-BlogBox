@@ -1,3 +1,7 @@
+import logging
+
+import botocore
+
 from settings import aws_Secret_access_key, aws_Access_key
 import boto3
 from botocore.config import Config
@@ -37,7 +41,11 @@ def check_file_url(url):
 def upload_file(file):
     if not file.content_type.startswith('image'):
         abort(415, "please upload only: jpeg, jpg, png, gif, bmp, tiff, webp.")
-    resp = s3.upload_fileobj(file, BUCKET_NAME, file.filename, ExtraArgs={'ACL': 'public-read'})
+    try:
+        resp = s3.upload_fileobj(file, BUCKET_NAME, file.filename, ExtraArgs={'ACL': 'public-read'})
+    except botocore.exceptions.ClientError as e:
+        logging.getLogger().error(f"Failed uploading file: {e}")
+        return
     return resp
 
 
@@ -50,7 +58,11 @@ def parse_url_to_file_key(url):
 
 def delete_file(url):
     file_key = parse_url_to_file_key(url)
-    resp = s3.delete_object(Bucket=BUCKET_NAME, Key=file_key)
+    try:
+        resp = s3.delete_object(Bucket=BUCKET_NAME, Key=file_key)
+    except botocore.exceptions.ClientError as e:
+        logging.getLogger().error(f"Failed deleting file: {e}")
+        return
     return resp
 
 
